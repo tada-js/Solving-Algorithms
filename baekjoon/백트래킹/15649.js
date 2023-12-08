@@ -2,6 +2,48 @@
   let fs = require('fs');
   let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
+  const N = ~~input[0].split(' ')[0];
+  const M = ~~input[0].split(' ')[1];
+
+  let answer = '';
+  let arr = [];
+  let seleted = [];
+  let visited = Array(N).fill(false);
+
+  for (let i = 1; i <= N; i++) {
+    arr.push(i);
+  }
+
+  function dfs(arr, depth) {
+    if (depth === M) {
+      let result = [];
+      for (const i of seleted) {
+        result.push(i); // result.push(arr[i]);
+      }
+      for (const x of result) {
+        answer += x + ' ';
+      }
+      answer += '\n';
+      return;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      if (visited[i]) continue;
+      seleted.push(arr[i]); // selected.push(i)
+      visited[i] = true;
+      dfs(arr, depth + 1);
+      seleted.pop();
+      visited[i] = false;
+    }
+  }
+
+  dfs(arr, 0);
+  console.log(answer);
+}
+{
+  let fs = require('fs');
+  let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
   const [N, M] = input[0].split(' ').map(Number);
   let arr = []; // 순열을 계산하고자 하는 원소가 담긴 배열
 
