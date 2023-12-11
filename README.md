@@ -10,6 +10,7 @@
 
 #### [백준](https://github.com/tada-js/Solving-Algorithms/tree/main/baekjoon)
 
+- [DFS](https://github.com/tada-js/Solving-Algorithms/tree/main/baekjoon/DFS)
 - [그리디](https://github.com/tada-js/Solving-Algorithms/tree/main/baekjoon/%EA%B7%B8%EB%A6%AC%EB%94%94)
 - [문자열](https://github.com/tada-js/Solving-Algorithms/tree/main/baekjoon/%EB%AC%B8%EC%9E%90%EC%97%B4)
 - [반복문](https://github.com/tada-js/Solving-Algorithms/tree/main/baekjoon/%EB%B0%98%EB%B3%B5%EB%AC%B8)
