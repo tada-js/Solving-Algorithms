@@ -50,3 +50,33 @@
     [1, 5, 3, 5, 1, 2, 1, 4]
   );
 }
+{
+  function solution(board, moves) {
+    const lanes = new Array(board[0].length).fill().map(() => []);
+    const bucket = [];
+    let answer = 0;
+
+    for (let i = board[0].length - 1; i >= 0; i--) {
+      for (let j = 0; j < board[0].length; j++) {
+        if (board[i][j]) {
+          lanes[j].push(board[i][j]);
+        }
+      }
+    }
+
+    for (const x of moves) {
+      if (lanes[x - 1].length !== 0) {
+        const doll = lanes[x - 1].pop();
+
+        if (bucket.length !== 0 && bucket[bucket.length - 1] === doll) {
+          bucket.pop();
+          answer += 2;
+        } else {
+          bucket.push(doll);
+        }
+      }
+    }
+
+    return answer;
+  }
+}
